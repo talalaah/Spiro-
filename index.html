@@ -1635,7 +1635,7 @@ button{appearance:none;-webkit-tap-highlight-color:transparent}
       <div class="page-title"><button class="back" onclick="showPage('home')"><script>document.write(lwIcon('arrowRight'))</script></button><h2>Retirer des fonds</h2></div>
       <div class="card">
         <label>Montant souhaité</label>
-        <input id="withdrawAmount" type="number" min="5500" step="1" placeholder="Minimum 5 500 FC"><p class="withdraw-note">Minimum de retrait : <strong>5 500 FC</strong> • Frais : <strong>15 %</strong> • Traitement : <strong>Retrait automatique</strong>.</p><div id="withdrawAvailabilityNote" class="withdraw-note" style="margin-top:8px">Retraits disponibles 24h/24 • Traitement automatique selon la disponibilité du service de paiement.</div>
+        <input id="withdrawAmount" type="number" min="1000" step="1" placeholder="Minimum 1 000 FC"><p class="withdraw-note">Minimum de retrait : <strong>1 000 FC</strong> • Frais : <strong>15 %</strong> • Traitement : <strong>Retrait automatique</strong>.</p><div id="withdrawAvailabilityNote" class="withdraw-note" style="margin-top:8px">Retraits disponibles 24h/24 • Traitement automatique selon la disponibilité du service de paiement.</div>
         <p id="withdrawCalculation" style="font-size:12px;color:#0b63ce;margin-top:7px;font-weight:bold"></p>
         <div id="withdrawCountryInfo" class="withdraw-note" style="margin-top:8px">Pays du compte : — • Moyens de retrait disponibles : —</div>
         <label>Numéro de réception</label>
@@ -1874,14 +1874,12 @@ const vipProductImages = spiroBikeImages;
 
 
 const products = [
-  { name:"Plan 1 • BMW M 1000 RR", image:vipProductImages[0], amountNum:6000, amount:"6 000 FCFA", daily:"1 300 FCFA", gainNum:1300, durationDays:30, totalNum:45000, total:"45 000 FCFA", profitNetNum:39000, profitNet:"+39 000 FCFA" },
-  { name:"Plan 2 • Yamaha YZF-R1", image:vipProductImages[1], amountNum:10000, amount:"10 000 FCFA", daily:"2 167 FCFA", gainNum:2167, durationDays:30, totalNum:75010, total:"75 010 FCFA", profitNetNum:65010, profitNet:"+65 010 FCFA" },
-  { name:"Plan 3 • Ducati Panigale V4", image:vipProductImages[2], amountNum:15000, amount:"15 000 FCFA", daily:"3 250 FCFA", gainNum:3250, durationDays:30, totalNum:112500, total:"112 500 FCFA", profitNetNum:97500, profitNet:"+97 500 FCFA" },
-  { name:"Plan 4 • Kawasaki Ninja H2", image:vipProductImages[3], amountNum:20000, amount:"20 000 FCFA", daily:"4 333 FCFA", gainNum:4333, durationDays:30, totalNum:149990, total:"149 990 FCFA", profitNetNum:129990, profitNet:"+129 990 FCFA" },
-  { name:"Plan 5 • Triumph Daytona 765", image:vipProductImages[4], amountNum:30000, amount:"30 000 FCFA", daily:"6 500 FCFA", gainNum:6500, durationDays:30, totalNum:225000, total:"225 000 FCFA", profitNetNum:195000, profitNet:"+195 000 FCFA" },
-  { name:"Plan 6 • Aprilia RSV4", image:vipProductImages[5], amountNum:50000, amount:"50 000 FCFA", daily:"10 833 FCFA", gainNum:10833, durationDays:30, totalNum:374990, total:"374 990 FCFA", profitNetNum:324990, profitNet:"+324 990 FCFA" },
-  { name:"Plan 7 • Honda Fireblade", image:vipProductImages[6], amountNum:75000, amount:"75 000 FCFA", daily:"16 250 FCFA", gainNum:16250, durationDays:30, totalNum:562500, total:"562 500 FCFA", profitNetNum:487500, profitNet:"+487 500 FCFA" },
-  { name:"Plan 8 • MV Agusta Brutale 1000 RR", image:vipProductImages[7], amountNum:100000, amount:"100 000 FCFA", daily:"21 667 FCFA", gainNum:21667, durationDays:30, totalNum:750010, total:"750 010 FCFA", profitNetNum:650010, profitNet:"+650 010 FCFA" }
+  { name:"Plan 1 • Élevage & Pêche", image:vipProductImages[0], amountNum:2000, amount:"2 000 FC", daily:"500 FC", gainNum:500, durationDays:30, totalNum:17000, total:"17 000 FC", profitNetNum:15000, profitNet:"+15 000 FC" },
+  { name:"Plan 2 • Élevage & Pêche", image:vipProductImages[1], amountNum:3000, amount:"3 000 FC", daily:"750 FC", gainNum:750, durationDays:30, totalNum:25500, total:"25 500 FC", profitNetNum:22500, profitNet:"+22 500 FC" },
+  { name:"Plan 3 • Élevage & Pêche", image:vipProductImages[2], amountNum:5000, amount:"5 000 FC", daily:"1 250 FC", gainNum:1250, durationDays:30, totalNum:42500, total:"42 500 FC", profitNetNum:37500, profitNet:"+37 500 FC" },
+  { name:"Plan 4 • Élevage & Pêche", image:vipProductImages[3], amountNum:8000, amount:"8 000 FC", daily:"2 000 FC", gainNum:2000, durationDays:30, totalNum:68000, total:"68 000 FC", profitNetNum:60000, profitNet:"+60 000 FC" },
+  { name:"Plan 5 • Élevage & Pêche", image:vipProductImages[4], amountNum:10000, amount:"10 000 FC", daily:"2 500 FC", gainNum:2500, durationDays:30, totalNum:85000, total:"85 000 FC", profitNetNum:75000, profitNet:"+75 000 FC" },
+  { name:"Plan 6 • Élevage & Pêche", image:vipProductImages[5], amountNum:15000, amount:"15 000 FC", daily:"3 750 FC", gainNum:3750, durationDays:30, totalNum:127500, total:"127 500 FC", profitNetNum:112500, profitNet:"+112 500 FC" }
 ];
 
 const LOCAL_USERS_KEY = "blackstar_users_v3";
@@ -2566,11 +2564,11 @@ async function register(){
       productIncome:0,
       daily:0,
       teamIncome:0,
-      bonus:1000,
+      bonus:500,
       bonusRegistrationGranted:true,
       history:[{
         type:"Bonus d'inscription",
-        amount:1000,
+        amount:500,
         status:"Actif",
         date:now,
         method:"Système"
@@ -4297,7 +4295,7 @@ setInterval(updateWithdrawalAvailability, 30000);
 setTimeout(updateWithdrawalAvailability, 0);
 
 const WITHDRAWAL_RULES = {
-  minAmount: 5500,
+  minAmount: 1000,
   feeRate: 0.15,
   delayText: "Retrait automatique",
   maintenance: false
@@ -4388,7 +4386,7 @@ function updateWithdrawalAvailability(){
   }
   if(note){
     note.textContent = open
-      ? "Retraits disponibles à tout moment • Retrait automatique après confirmation • Minimum : 5 500 FC • Solde minimum requis : 5 500 FC."
+      ? "Retraits disponibles à tout moment • Retrait automatique après confirmation • Minimum : 1 000 FC • Solde minimum requis : 1 000 FC."
       : getWithdrawalClosedMessage();
     note.style.background = open ? "#edf7f5" : "#fff0f0";
     note.style.color = open ? "#126b60" : "#a12a2a";
@@ -4404,9 +4402,9 @@ async function makeWithdraw(){
   const operationKey="WD-"+String(auth?.currentUser?.uid||currentUser.phone)+":"+String(amount)+":"+String(phone)+":"+String(method);
   if(!beginFinancialAction(operationKey,"withdrawSubmitBtn")) return toast("Cette demande de retrait est déjà en cours.");
   try{
-    if(getAvailableBalance(currentUser)<WITHDRAWAL_RULES.minAmount){toast("Retrait impossible : votre solde doit contenir au moins 5 500 FC.");return;}
-    if(amount<WITHDRAWAL_RULES.minAmount){toast("Le montant minimum de retrait est de 5 500 FC.");return;}
-    if(active.length===0){toast("Le retrait nécessite au moins un plan actif.");return;}
+    if(getAvailableBalance(currentUser)<WITHDRAWAL_RULES.minAmount){toast("Retrait impossible : votre solde doit contenir au moins 1 000 FC.");return;}
+    if(amount<WITHDRAWAL_RULES.minAmount){toast("Le montant minimum de retrait est de 1 000 FC.");return;}
+    if(active.length===0){toast("Le retrait nécessite au moins un produit actif et sécurisé sur votre compte.");return;}
     if(amount>getAvailableBalance(currentUser)){toast("Solde insuffisant.");return;}
     if(!phone){toast("Veuillez entrer le numéro de réception.");return;}
     if(!method){toast("Aucun moyen de retrait disponible pour votre pays.");return;}
